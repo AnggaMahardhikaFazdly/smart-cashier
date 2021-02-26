@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Container } from 'react-bootstrap';
 import './App.css';
-import { Navbar, Categories, Results, Menus } from './Components';
+import { Navbar, Categories, Menus, Payment } from './Components';
 import { API_URL } from './Utils/Constants';
 import axios from 'axios';
 export default class App extends Component {
@@ -10,11 +10,28 @@ export default class App extends Component {
 
     this.state = {
       menus: [],
+      selectedCategory: ''
     }
   }
 
   componentDidMount() {
-    axios.get(API_URL + "products")
+    axios.get(API_URL + "products?category.name=" + this.state.selectedCategory)
+      .then(res => {
+        const menus = res.data;
+        this.setState({ menus });
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  changeCategory = (value) => {
+    this.setState({
+      selectedCategory: value,
+      menus: []
+    })
+
+    axios.get(API_URL + "products?category.name=" + value)
       .then(res => {
         const menus = res.data;
         this.setState({ menus });
@@ -25,16 +42,16 @@ export default class App extends Component {
   }
 
   render() {
-    const { menus } = this.state
+    const { menus, selectedCategory } = this.state
     return (
       <div className="App">
         <Navbar />
         <div className="mt-3">
           <Container fluid>
             <Row>
-              <Categories />
+              <Categories changeCategory={this.changeCategory} selectedCategory={selectedCategory} />
               <Col>
-                <h4><strong>Product List</strong></h4>
+                <h5 className="menu-title"><strong>{selectedCategory}</strong></h5>
                 <hr />
                 <Row>
                   {menus && menus.map((menu) => (
@@ -45,7 +62,7 @@ export default class App extends Component {
                   ))}
                 </Row>
               </Col>
-              <Results />
+              <Payment />
             </Row>
           </Container>
         </div>

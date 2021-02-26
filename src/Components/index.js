@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Categories from './Categories';
-import Results from './Result';
 import Menus from './Menus';
+import Payment from './Payment';
 
-export { Navbar, Categories, Results, Menus }
+export { Navbar, Categories, Menus, Payment }

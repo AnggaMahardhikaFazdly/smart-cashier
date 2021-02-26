@@ -5,7 +5,10 @@ export default class Results extends Component {
     render() {
         return (
             <Col md={3} mt="2">
-                <h4><strong>Result</strong></h4>
+                <div className="payment-title">
+                    <box-icon name="wallet"></box-icon>
+                    <h5><strong>Payment</strong></h5>
+                </div>
                 <hr />
             </Col>
         )
