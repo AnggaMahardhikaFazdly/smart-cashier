@@ -2,10 +2,10 @@ import React from 'react';
 import { Col, Card } from 'react-bootstrap';
 import { numberWithCommas } from '../Utils/Utils';
 
-const Menus = ({ menu, toCart }) => {
+const Menus = ({ menu, handleCarts }) => {
     return (
         <Col md={4} xs={6} className="mb-4">
-            <Card className="menu-card" onClick={() => toCart(menu)}>
+            <Card className="menu-card" onClick={() => handleCarts(menu)}>
                 <Card.Img variant="top" className="bg-food"
                     src={
                         "assets/images/" +
