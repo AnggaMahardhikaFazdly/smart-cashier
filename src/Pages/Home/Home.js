@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Container } from 'react-bootstrap';
-import { Categories, Menus, ItemOrder } from '../Components';
-import { API_URL } from '../Utils/Constants';
+import { Categories, Menus, ItemOrder } from '../../Components';
+import { API_URL } from '../../Utils/Constants';
 import axios from 'axios';
 import swal from 'sweetalert';
 

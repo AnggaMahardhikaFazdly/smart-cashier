@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { API_URL } from "../Utils/Constants";
+import { API_URL } from "../../Utils/Constants";
 
-export default class Sukses extends Component {
+export default class SuccessPayment extends Component {
     componentDidMount() {
         axios
             .get(API_URL + "carts")

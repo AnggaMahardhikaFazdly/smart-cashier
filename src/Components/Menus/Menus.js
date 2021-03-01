@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
-import { numberWithCommas } from '../Utils/Utils';
+import { numberWithCommas } from '../../Utils/Utils';
 
 const Menus = ({ menu, handleCarts }) => {
     return (

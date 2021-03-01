@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col, ListGroup } from 'react-bootstrap';
 import axios from 'axios';
-import { API_URL } from '../Utils/Constants';
+import { API_URL } from '../../Utils/Constants';
 import 'boxicons';
 
 const Icon = ({ name }) => {
@@ -42,9 +42,7 @@ export default class Categories extends Component {
                         <ListGroup.Item key={category.id} onClick={() => changeCategory(category.name)} className={selectedCategory === category.name && "active-category"} style={{ cursor: 'pointer' }}>
                             <div style={{ textAlign: 'center' }}>
                                 <Icon name={category.name} />
-                            </div>
-                            <div>
-                                <p style={{ textAlign: 'center' }}>{category.name}</p>
+                                <p>{category.name}</p>
                             </div>
                         </ListGroup.Item>
                     ))}

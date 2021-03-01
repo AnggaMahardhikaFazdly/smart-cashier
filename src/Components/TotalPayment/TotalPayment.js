@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Row, Col, Button } from "react-bootstrap";
-import { numberWithCommas } from "../Utils/Utils";
-import { API_URL } from '../Utils/Constants';
+import { numberWithCommas } from "../../Utils/Utils";
+import { API_URL } from '../../Utils/Constants';
 import 'boxicons';
 
 export default class TotalPayment extends Component {
@@ -13,7 +13,7 @@ export default class TotalPayment extends Component {
     }
 
     axios.post(API_URL + "orders", order).then((res) => {
-      this.props.history.push('/success')
+      this.props.history.push('/success-payment')
     })
   };
 
@@ -21,8 +21,8 @@ export default class TotalPayment extends Component {
     const totalPayment = this.props.carts.reduce(function (result, item) {
       return result + item.total_price;
     }, 0);
-
-    const tax = Math.round(10 * totalPayment) / 100
+    const tax = 10
+    const totalTax = Math.round(tax * totalPayment) / 100
 
     return (
       <>
@@ -39,16 +39,15 @@ export default class TotalPayment extends Component {
               <p>
                 Tax{" "}
                 <small className="float-right mr-2 tax">
-                  Rp. {numberWithCommas(tax)}
+                  {(tax)} %
                 </small>
               </p>
               <p>
                 Total {" "}
                 <strong className="float-right mr-2">
-                  Rp. {numberWithCommas(totalPayment + tax)}
+                  Rp. {numberWithCommas(totalPayment + totalTax)}
                 </strong>
               </p>
-
               <Button
                 variant="success"
                 block
@@ -56,7 +55,7 @@ export default class TotalPayment extends Component {
                 size="lg"
                 onClick={() => this.submitTotal(totalPayment)}
               >
-                <box-icon name='money'></box-icon> <strong>Payment</strong>
+                <box-icon name='money'></box-icon><strong>Pay Now</strong>
               </Button>
             </Col>
           </Row>
@@ -75,13 +74,13 @@ export default class TotalPayment extends Component {
               <p>
                 Tax{" "}
                 <small className="float-right mr-2 tax">
-                  Rp. {numberWithCommas(tax)}
+                  {(tax)} %
                 </small>
               </p>
               <p>
                 Total {" "}
                 <strong className="float-right mr-2">
-                  Rp. {numberWithCommas(totalPayment + tax)}
+                  Rp. {numberWithCommas(totalPayment + totalTax)}
                 </strong>
               </p>
               <Button
@@ -91,7 +90,7 @@ export default class TotalPayment extends Component {
                 size="lg"
                 onClick={() => this.submitTotal(totalPayment)}
               >
-                <box-icon name='money'></box-icon> <strong>Payment</strong>
+                <box-icon name='money'></box-icon> <strong>Pay Now</strong>
               </Button>
             </Col>
           </Row>

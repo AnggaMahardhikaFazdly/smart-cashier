@@ -1,7 +1,8 @@
-import Navbar from './Navbar';
-import Categories from './Categories';
-import Menus from './Menus';
-import ItemOrder from './ItemOrder';
-import TotalPayment from './TotalPayment';
+import Navbar from './Navbar/Navbar';
+import Categories from './Categories/Categories';
+import Menus from './Menus/Menus';
+import ItemOrder from './ItemOrder/ItemOrder';
+import TotalPayment from './TotalPayment/TotalPayment';
+import OrderDetail from './OrderDetail/OrderDetail'
 
-export { Navbar, Categories, Menus, ItemOrder, TotalPayment }
+export { Navbar, Categories, Menus, ItemOrder, TotalPayment, OrderDetail }

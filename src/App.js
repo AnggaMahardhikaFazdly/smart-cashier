@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Navbar } from './Components';
-import { Home, Success } from './Pages';
+import { Home, SuccessPayment } from './Pages';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/success" component={Success} exact />
+          <Route path="/success-payment" component={SuccessPayment} exact />
         </Switch>
       </main>
     </Router>
