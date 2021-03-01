@@ -85,10 +85,10 @@ export default class Home extends Component {
                         .then((res) => {
                             swal({
                                 title: "Success!",
-                                text: cart.product.name + "Already into the cart!",
+                                text: cart.product.name + "Already Into the Cart!",
                                 icon: "success",
                                 button: false,
-                                timer: 1500,
+                                timer: 2000,
                             });
                         })
                         .catch(error => {
@@ -105,10 +105,10 @@ export default class Home extends Component {
                         .then((res) => {
                             swal({
                                 title: "Success!",
-                                text: cart.product.name + " already into the cart!",
+                                text: cart.product.name + " Already Into the Cart!",
                                 icon: "success",
                                 button: false,
-                                timer: 1500,
+                                timer: 2000,
                             });
                         })
                         .catch(error => {
@@ -124,7 +124,7 @@ export default class Home extends Component {
     render() {
         const { menus, selectedCategory, carts } = this.state
         return (
-            <div className="App">
+            <div className="home">
                 <div className="mt-3">
                     <Container fluid>
                         <Row>
@@ -132,7 +132,7 @@ export default class Home extends Component {
                             <Col>
                                 <h5 className="menu-title"><strong>{selectedCategory}</strong></h5>
                                 <hr />
-                                <Row>
+                                <Row className="overflow-auto menu">
                                     {menus && menus.map((menu) => (
                                         <Menus
                                             key={menu.id}

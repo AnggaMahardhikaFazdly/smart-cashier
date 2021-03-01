@@ -83,3 +83,15 @@ code {
 .total {
   color: #F84B70 !important;
 }
+
+.menu {
+  height: 460px;
+}
+
+.order {
+  height: 278px;
+}
+
+/* .overflow-auto::-webkit-scrollbar {
+  display: none;
+} */
