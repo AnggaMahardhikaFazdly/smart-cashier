@@ -39,17 +39,19 @@ const OrderDetail = ({
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Label>Total</Form.Label>
+                            <Form.Label>Items</Form.Label>
                             <br />
-                            <Button variant="primary" size="sm" className="mr-2" onClick={() => decrease()}>
+                            <Button size="sm" className="mr-2 btn-items" onClick={() => decrease()}>
                                 <box-icon type='solid' name='chevron-left-square'></box-icon>
                             </Button>
 
                             <strong>{total}</strong>
 
-                            <Button variant="primary" size="sm" className="ml-2" onClick={() => increase()}>
-                                <box-icon name='chevron-right-square' type='solid' ></box-icon>
+                            <Button size="sm" className="ml-2 btn-items" onClick={() => increase()}>
+                                <box-icon type='solid' name='chevron-right-square' ></box-icon>
                             </Button>
+                            &nbsp;
+                            <span><strong>pcs</strong></span>
                         </Form.Group>
 
                         <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -73,7 +75,7 @@ const OrderDetail = ({
                         <box-icon type='solid' name='trash-alt'></box-icon> Delete Order
                     </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal >
         );
     } else {
         return (

@@ -85,7 +85,7 @@ export default class Home extends Component {
                         .then((res) => {
                             swal({
                                 title: "Success!",
-                                text: cart.product.name + "Already Into the Cart!",
+                                text: cart.product.name + " Already Into the Cart!",
                                 icon: "success",
                                 button: false,
                                 timer: 2000,

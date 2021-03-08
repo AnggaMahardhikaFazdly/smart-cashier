@@ -25,11 +25,11 @@ export default class SuccessPayment extends Component {
     render() {
         return (
             <div className="mt-4 text-center">
-                <Image src="assets/images/success.png" width="500" />
-                <h2>Sukses Pesan</h2>
-                <p>Terimakasih Sudah Memesan!</p>
+                <Image src="assets/images/success.png" className="success-page" />
+                <h2>Payment Has Been Completed!</h2>
+                <br />
                 <Button variant="primary" as={Link} to="/">
-                    Kembali
+                    Back
                 </Button>
             </div>
         );

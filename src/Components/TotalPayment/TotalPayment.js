@@ -27,11 +27,11 @@ export default class TotalPayment extends Component {
     return (
       <>
         {/* Web */}
-        <div className="fixed-bottom d-none d-md-block">
+        <div className="fixed-bottom d-none d-md-block total">
           <Row>
             <Col md={{ span: 3, offset: 9 }} className="px-4">
               <p>
-                SubTotal{" "}
+                Sub Total{" "}
                 <small className="float-right mr-2">
                   Rp. {numberWithCommas(totalPayment)}
                 </small>

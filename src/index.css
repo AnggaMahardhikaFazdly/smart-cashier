@@ -29,9 +29,19 @@ code {
   background: linear-gradient(90deg, #F97F46 0, #F84B70 100%);
 }
 
+.brand {
+  margin-left: -95px;
+}
+
 .active-category {
   background: linear-gradient(90deg, #F97F46 0, #F84B70 100%);
   color: white;
+}
+
+
+.categories {
+  width: 60px;
+  text-align: center;
 }
 
 .menu-card {
@@ -72,7 +82,13 @@ code {
 .text-center {
   background-color: white;
   width: 100vw;
-  height: 80vh;
+  height: 91vh;
+  margin-top: -1px !important;
+}
+
+.success-page {
+  width: 500px;
+  height: 350px;
 }
 
 .tax {
@@ -82,6 +98,8 @@ code {
 
 .total {
   color: #F84B70 !important;
+  margin-left: -30px;
+  margin-right: 10px;
 }
 
 .menu {
@@ -90,8 +108,16 @@ code {
 
 .order {
   height: 278px;
+  cursor: pointer;
 }
 
-/* .overflow-auto::-webkit-scrollbar {
-  display: none;
-} */
+.btn-items {
+  background: none;
+  border: none;
+
+}
+
+.btn-items:hover {
+  background: none;
+  border: none;
+}

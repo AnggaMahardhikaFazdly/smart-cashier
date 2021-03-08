@@ -3,9 +3,9 @@ import { Navbar, Container } from 'react-bootstrap';
 
 const NavigationBar = () => {
     return (
-        <Navbar variant="dark" expand="lg">
+        <Navbar variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Smart Cashier</Navbar.Brand>
+                <Navbar.Brand className="brand">SMART CASHIER by SkyLounge Restaurant</Navbar.Brand>
             </Container>
         </Navbar>
     )
